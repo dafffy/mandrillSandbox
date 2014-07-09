@@ -21,44 +21,61 @@
 			</div>
 
 			<br/>
-			<table class="table table-bordered">
-				<tbody>
-				<tr>
-					<th><span>MANAGED INSTALLS</span></th>
-				</tr>
-				{{#each managed_installs}}
-				<tr>
-					<td data-key="managed_installs" contenteditable="true">
-						{{this}}
-					</td>
-				</tr>
-				{{/each}}
-				<tr>
-					<th><span>OPTIONAL INSTALLS</span></th>
-				</tr>
-				{{#each optional_installs}}
-				<tr>
-					<td data-key="optional_installs" contenteditable="true">{{this}}</td>
-				</tr>
-				{{/each}}
-				<tr>
-					<th><span>MANAGED UPDATES</span></th>
-				</tr>
-				{{#each managed_updates}}
-				<tr>
-					<td data-key="managed_updates" contenteditable="true">{{this}}</td>
-				</tr>
-				{{/each}}
-				<tr>
-					<th><span>MANAGED UNINSTALLS</span></th>
-				</tr>
-				{{#each managed_uninstalls}}
-				<tr>
-					<td data-key="managed_uninstalls" contenteditable="true">{{this}}</td>
-				</tr>
-				{{/each}}
-				</tbody>
-			</table>
+
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Managed_Installs</h3>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group">
+						{{#each managed_installs}}
+             					<li class="list-group-item">{{this}}</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+
+
+                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                        <h3 class="panel-title">Optional_Installs</h3>
+                                </div>
+                                <div class="panel-body">
+                                        <ul class="list-group">
+                                                {{#each optional_installs}}
+                                                <li class="list-group-item">{{this}}</li>
+                                                {{/each}}
+                                        </ul>
+                                </div>
+                        </div>
+                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                        <h3 class="panel-title">Managed_Updates</h3>
+                                </div>
+                                <div class="panel-body">
+                                        <ul class="list-group">
+                                                {{#each managed_updates}}
+                                                <li class="list-group-item">{{this}}</li>
+                                                {{/each}}
+                                        </ul>
+                                </div>
+                        </div>
+                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                        <h3 class="panel-title">Managed_Uninstalls</h3>
+                                </div>
+                                <div class="panel-body">
+                                        <ul class="list-group">
+                                                {{#each managed_uninstalls}}
+                                                <li class="list-group-item">{{this}}</li>
+                                                {{/each}}
+                                        </ul>
+                                </div>
+                        </div>
+
+
 		</div>
 	</div>
 </template>
+
