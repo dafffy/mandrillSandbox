@@ -6,6 +6,6 @@
 standard-app-packages
 autopublish
 insecure
-coffeescript
 stylus
+coffeescript
 bootstrap-3

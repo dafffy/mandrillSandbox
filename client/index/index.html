@@ -1,17 +1,37 @@
 <body>
-{{> index}}
+	{{> index}}
 </body>
+
+
 
 <template name="index">
 	<div class="row">
-		<div class="col-xs-3">
-			{{> manifest_list}}
+		<div class="col-md-3 navigation-dock">
+			<ul class="group-list">
+				{{#each manifests}}
+				<li class="list-group-item {{manifest_is_selected}}">{{this}}</li>
+				{{/each}}
+			</ul>
 		</div>
-		<div class="col-xs-3">
-			{{> manifest_contents}}
-		</div>
-		<div class="col-xs-6">
-			{{> manifest_details}}
+		<div class="col-md-9">
+			<h2>{{title}}</h2>
+			<div>
+				<a href="#" class="small">add notes</a>
+			</div>
+
+			<br/>
+			<table class="table">
+				<tbody>
+				<tr><th><span>MANAGED INSTALLS</span></th></tr>
+				{{#each managed_installs}}<tr><td>{{this}}</td></tr>{{/each}}
+				<tr><th><span>OPTIONAL INSTALLS</span></th></tr>
+				{{#each optional_installs}}<tr><td>{{this}}</td></tr>{{/each}}
+				<tr><th><span>MANAGED UPDATES</span></th></tr>
+				{{#each managed_updates}}<tr><td>{{this}}</td></tr>{{/each}}
+				<tr><th><span>MANAGED UNINSTALLS</span></th></tr>
+				{{#each managed_uninstalls}}<tr><td>{{this}}</td></tr>{{/each}}
+				</tbody>
+			</table>
 		</div>
 	</div>
 </template>
