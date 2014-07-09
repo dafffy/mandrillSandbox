@@ -27,3 +27,20 @@ Template.index.optional_installs = ()->
 	['twitter']
 Template.index.managed_updates = ()->
 	['twitter']
+
+
+Template.index.events {
+	'keydown td': (event)->
+		console.log $(event.target).text()
+		console.log event.keyCode
+		switch event.keyCode
+			when 27
+				$(event.target).blur()
+			when 8
+				if $(event.target).text() is ''
+					console.log 'Should be deleting this entry'
+			when 13
+				event.preventDefault()
+				if $(event.target).text() isnt ''
+					console.log 'Should be adding a new entry at index+1'
+}
