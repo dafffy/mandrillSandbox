@@ -23,14 +23,40 @@
 			<br/>
 			<table class="table table-bordered">
 				<tbody>
-				<tr><th><span>MANAGED INSTALLS</span></th></tr>
-				{{#each managed_installs}}<tr><td contenteditable="true">{{this}}</td></tr>{{/each}}
-				<tr><th><span>OPTIONAL INSTALLS</span></th></tr>
-				{{#each optional_installs}}<tr><td>{{this}}</td></tr>{{/each}}
-				<tr><th><span>MANAGED UPDATES</span></th></tr>
-				{{#each managed_updates}}<tr><td>{{this}}</td></tr>{{/each}}
-				<tr><th><span>MANAGED UNINSTALLS</span></th></tr>
-				{{#each managed_uninstalls}}<tr><td>{{this}}</td></tr>{{/each}}
+				<tr>
+					<th><span>MANAGED INSTALLS</span></th>
+				</tr>
+				{{#each managed_installs}}
+				<tr>
+					<td data-key="managed_installs" contenteditable="true">
+						{{this}}
+					</td>
+				</tr>
+				{{/each}}
+				<tr>
+					<th><span>OPTIONAL INSTALLS</span></th>
+				</tr>
+				{{#each optional_installs}}
+				<tr>
+					<td data-key="optional_installs" contenteditable="true">{{this}}</td>
+				</tr>
+				{{/each}}
+				<tr>
+					<th><span>MANAGED UPDATES</span></th>
+				</tr>
+				{{#each managed_updates}}
+				<tr>
+					<td data-key="managed_updates" contenteditable="true">{{this}}</td>
+				</tr>
+				{{/each}}
+				<tr>
+					<th><span>MANAGED UNINSTALLS</span></th>
+				</tr>
+				{{#each managed_uninstalls}}
+				<tr>
+					<td data-key="managed_uninstalls" contenteditable="true">{{this}}</td>
+				</tr>
+				{{/each}}
 				</tbody>
 			</table>
 		</div>
